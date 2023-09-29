@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- *****************************Chapter 46, 48 (Events)******************************* -->
+
+    <!-- 1.	Create a simple event that prints a message when the user clicks on an element. -->
+    <!-- <input type="button" value="Click" onClick="alert('Hello world!');"> -->
+
+    <!-- 2.	Create an event that hides an element when the user clicks on a different element -->
+
+    <!-- <p id="para">This is a paragraph to hide.</p>
+    <button onclick="hideElement()">Click</button>
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
+    <script>
+        function hideElement(){
+            var hidePara = document.getElementById("para");
+            hidePara.classList.add("hidden");
+        }
+    </script> -->
+
+    <!-- 3.	Create a link that changes color when the user hovers over it and then back to its original color when the user moves the mouse away. -->
+    <!-- <a href="javaScript:void(0)" onmouseover="this.style.color='green'"; onmouseout="this.style.color=''">Click</a> -->
+
+    <!-- 4.	Create an event that scrolls to the top of the page when the user clicks on a link. -->
+    <!-- <a href="javaScript:void(0)" onclick="topFunction()">TOP</a> -->
+
+    <!-- 5.	Create a link that plays a sound when the user clicks on it. -->
+    <!-- <a href="#" onclick="playSound()">Play Sound</a> 
+     <script>
+        function playSound(){
+            var audio = new Audio ('mouse-click.mp3');
+            audio.play()
+        }
+     </script> -->
+
+    <!-- 6.	Create a simple link that opens a new window when clicked. -->
+    <!-- <a href="https://www.google.com/" target="_blank">Google!</a> -->
+
+    <!-- 7.	Create a simple button that alert a message when clicked. -->
+    <!-- <button onclick="alert('Hello')">Button</button> -->
+
+    <!-- 8.	Create a button that changes color when the user hovers over it. -->
+    <!-- <button onfocus="this.style.color='green'">Click</button> -->
+
+    <!-- 9.	Create a button that plays a sound when the user clicks on it. -->
+    <!-- <button onclick="playSound()"> Click </button>
+    <script>
+        function playSound(){
+            var audio = new Audio ('mouse-click.mp3');
+            audio.play()
+        }
+    </script> -->
+
+    <!-- 10.	Create an event that alert a message when the user moves the mouse over an element. -->
+    <!-- <p onmouseover="alert('You move your mouse over an element.')">This is a paragraph.</p> -->
+
+    <!-- 11.	Create an event that hides an element when the user moves the mouse out of it. -->
+
+    <!-- <div id="elementToHide">Mouse over me</div>
+    <script>
+        var elementToHide = document.getElementById("elementToHide");
+        elementToHide.addEventListener("mouseout", function () {
+            elementToHide.style.display = "none";
+        });
+    </script> -->
+
+    <!-- 12.     Create a link that opens a new window when the user clicks on it and then closes the window when the user clicks on a close button in the new window. The size of the new window should be determined by the user's mouse position. -->
+
+    <!-- <a href="#" id="openNewWindow">Open New Window</a>
+    <script>
+        // Get a reference to the link element by its ID
+        var openNewWindowLink = document.getElementById("openNewWindow");
+
+        // Add a click event listener to the link
+        openNewWindowLink.addEventListener("click", function () {
+            // Get the user's mouse position
+            var mouseX = event.clientX;
+            var mouseY = event.clientY;
+
+            // Calculate the window width and height based on the mouse position
+            var windowWidth = mouseX + 10; // Add 10 pixels for some extra space
+            var windowHeight = mouseY + 10; // Add 10 pixels for some extra space
+
+            // Open a new window with the calculated width and height
+            var newWindow = window.open("", "", "width=" + windowWidth + ", height=" + windowHeight);
+
+            newWindow.document.write("<button id='closeButton'>Close Window</button>");
+            newWindow.document.getElementById("closeButton").addEventListener("click", function () {
+                newWindow.close();
+            });
+        });
+
+    </script> -->
+
+
+
+    <!-- *************************Chapter 49, 50 (Reading and Setting field values)************************** -->
+
+    <!-- 1.	 Read the value of a user Input and print it to the console. -->
+
+    <!-- <input type="text" id="userName">
+    <button onclick="getName()">Submit</button>
+    <script>
+        function getName(){
+            var inputField = document.getElementById("userName");
+            console.log(inputField.value);
+            inputField.value = "";
+        }
+    </script> -->
+
+    <!-- 2.	Read the value of a checkbox and print it to the console -->
+
+    <!-- <input type="checkbox" id="userName">
+    <button onclick="getName()">Submit</button>
+    <script>
+        function getName() {
+            var checkbox = document.getElementById("userName");
+            console.log(checkbox.checked);
+        }
+    </script> -->
+
+    <!-- 3.	Read the value of a select box and print it to the console. -->
+
+    <!-- <select id="mySelect" onchange="printValue()">
+        <option value="option1">option 1</option>
+        <option value="option2">option 2</option>
+        <option value="option3">option 3</option>
+    </select>
+    <script>
+        function printValue() {
+            var selectBox = document.getElementById("mySelect");
+            console.log(selectBox.value);
+        }
+    </script> -->
+
+
+    <!-- 4.	Place some text in a field. Make up an id for the field. -->
+
+    <!-- <input type="text" id="field">
+    <script>
+        document.getElementById("field").value = "some text";
+    </script> -->
+
+    <!-- 5.	Ask the user about Martial Status. If the variable married is false, place the value "available" in the field with the id "status" -->
+
+    <!-- <input type="text" id="status">
+    <button onclick="updateStatus()">Update Status</button>
+    <script>
+        function updateStatus(){
+            var married = false;
+            if(!married){
+                document.getElementById("status").value = "available";
+            }
+        }
+    </script> -->
+
+    <!-- 6.	If a input is empty, fill it with a string. -->
+
+    <!-- <input type="text" id="fillInput">
+    <button onclick="fillBtn()">Fill Input</button>
+    <script>
+        function fillBtn(){
+            var input = document.getElementById("fillInput");
+            if(input.value === ""){
+                input.value = "Default";
+            }
+        }
+    </script> -->
+
+    <!-- 7.	Create a Registeration Form with Validation. -->
+
+    <!-- <form id="registrationForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit" , function(event){
+            event.preventDefault();
+            var nameInput = document.getElementById("name");
+            var emailInput = document.getElementById("email");
+            var passwordInput = document.getElementById("password");
+            if(nameInput.value === "" || emailInput.value === "" || passwordInput.value === ""){
+                alert("Please fill in all fields.");
+            }else{
+                alert("Registeration successfull");
+            }
+        })
+    </script> -->
+
+
+    <!-- **************************Chapter 51 (Reading and Setting paragraph text)*********************** -->
+
+    <!-- 1.	How can I create a paragraph that expands when the user clicks on a Show More? -->
+
+    <!-- <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi cumque, temporibus voluptates odit
+        voluptas at suscipit doloremque natus eaque, nam fuga?
+        <a href="javaScript:void(0)" onclick="morePara()">Show More</a>
+    </p>
+    <script>
+        function morePara() {
+            var text = "Saepe nostrum quas, porro illo quod voluptatem mollitia hic."
+            var paragraph = document.getElementById("para");
+            paragraph.innerHTML = text;
+        }
+    </script> -->
+
+    <!-- 2.	Read the text of a paragraph and use it to search for a specific word or phrase. -->
+
+    <!-- <p id="para">This is the paragraph. Read this carefully.</p>
+    <button onclick="searchWord()">Search</button>
+    <script>
+        function searchWord(){
+            var paragraph = document.getElementById("para").textContent;
+            var search = "paragraph";
+            if (paragraph.includes(search)){
+                console.log("Found");
+            }else{
+                console.log("Not found");
+            }
+        }
+    </script> -->
+
+    <!-- 3.	Read the text of a paragraph and use it to find the longest word. -->
+
+    <!-- <p id="para">Slow lorises are a group of several species of strepsirrhine primates which make up
+        the genus Nycticebus.</p>
+    <script>
+        function findLongestWord() {
+            var paragraph = document.getElementById("para").textContent;
+            var words = paragraph.split(" ");
+            var longestWord = "";
+
+            for (i = 0; i < words.length; i++) {
+                if (words[i].length > longestWord.length) {
+                    longestWord = words[i];
+                }
+            }
+            console.log("The longest word in the paragraph is: " + longestWord);
+        }
+        findLongestWord();
+    </script>
+    -->
+
+    <!-- 4.	Set the text of a paragraph to the value of a text field, but only if the value is not empty. -->
+
+    <!-- <input type="text" id="textField">
+    <button onclick="setTextButton()">Set Text</button>
+    <p id="para"></p>
+    <script>
+        function setTextButton() {
+            var textFieldValue = document.getElementById("textField").value;
+            var paragraph = document.getElementById("para");
+            if (textFieldValue !== "") {
+                paragraph.textContent = textFieldValue;
+            }
+        }
+    </script> -->
+
+    <!-- 5.	Set the text of a paragraph to the value of a text field, but only if the value is equal to a specific word or phrase. -->
+
+    <!-- <input type="text" id="textField">
+    <button onclick="setTextButton()">Set Text</button>
+    <p id="para"></p>
+    <script>
+        function setTextButton() {
+            var textFieldValue = document.getElementById("textField").value;
+            var paragraph = document.getElementById("para");
+            if (textFieldValue === "hello") {
+                paragraph.textContent = textFieldValue;
+            }
+        }
+    </script> -->
+
+    <!-- 6.	Set the text of a paragraph to the value of a text field, but only if the value is less than a certain length. -->
+
+    <!-- <input type="text" id="textField">
+    <button onclick="setTextButton()">Set Text</button>
+    <p id="para"></p>
+    <script>
+        function setTextButton() {
+            var textFieldValue = document.getElementById("textField").value;
+            var paragraph = document.getElementById("para");
+            var maxLength = 5;
+            if (textFieldValue.length <= maxLength) {
+                paragraph.textContent = textFieldValue;
+            }
+        }
+    </script> -->
+
+
+
+    <!-- ********************************Chapter 52 (Manipulating Images and Text)***************************** -->
+
+    <!-- 1.	When the user clicks on the sentence, it turns bold. -->
+
+    <!-- <p id="para" onclick="textBold()">paragraph</p>
+    <style>
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function textBold() {
+            var sentence = document.getElementById("para");
+            sentence.classList.toggle("bold");
+        }
+    </script> -->
+
+    <!-- 2.	How can I make an image disappear when the user hovers over it and show text instead? When the user hovers off the image, the original image should reappear. -->
+
+    <!-- 
+    <div class="image-container">
+        <img class="hover-image" src="./others/car.jpg" alt="Image">
+        <div class="hover-text">Hover over the image</div>
+    </div>
+
+    <style>
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hover-image {
+            max-width: 100%;
+            height: auto;
+            transition: opacity 0.3s;
+        }
+
+        .hover-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .image-container:hover .hover-image {
+            opacity: 0;
+        }
+
+        .image-container:hover .hover-text {
+            opacity: 1;
+        }
+    </style> -->
+
+
+    <!-- 3.	When the user mouses over the heading, its background turns black, but it retains its original light gray color -->
+
+    <!-- <h1 id="heading" onmouseout="resetBackground()" onmouseover="changeBackground()"> hello World</h1>
+    <script>
+        function changeBackground(){
+            var heading = document.getElementById("heading");
+            heading.style.backgroundColor = "black";
+        }
+        function resetBackground(){
+            var heading = document.getElementById("heading");
+            heading.style.backgroundColor = "lightgrey";
+
+        }
+    </script> -->
+
+    <!-- 4.	When user hover to a paragraph, Add a underline style to text. -->
+
+    <!-- <p id="para">Hover over this paragraph.</p>
+    <style>
+        #para:hover{
+            text-decoration: underline;
+        }
+    </style> -->
+
+
+    <!-- **********************************Chapter 53 (Swapping Images)******************************* -->
+
+    <!-- 1.	Swap the images when the user clicks on a button. -->
+
+    <!-- <img src="./others/car.jpg" width="300" id="before" onMouseover="swapPic();">
+    <script>
+        function swapPic() {
+            document.getElementById("before").src = "./others/car2.png";
+        }
+    </script> -->
+
+    <!-- <img src="./others/car.jpg" id="image1" width="300" alt="">
+    <img src="./others/car2.png" id="image2" width="300" alt="">
+    <br><br>
+    <button onclick="swapImages()">Swap Images</button>
+    <script>
+        function swapImages() {
+            var image1 = document.getElementById("image1");
+            var image2 = document.getElementById("image2");
+            var temp = image1.src;
+            image1.src = image2.src;
+            image2.src = temp;
+        }
+    </script> -->
+
+
+
+
+</body>
+<script src="app.js"></script>
+
+</html>
